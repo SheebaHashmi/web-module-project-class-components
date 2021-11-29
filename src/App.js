@@ -10,15 +10,24 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      task: '',
-      id: Date.now,
-      completed: false
+      tasks:[]
+    } 
+  }
+  
+  handleSubmit = (item) => {
+    const newTask = {
+      task:item,
+      id:Date.now,
+      completed:false
     }
+
+    this.setState({
+      ...this.state,
+      tasks: [...this.state.tasks,newTask]
+    })
+    console.log(this.state.tasks)
   }
- 
-  handleSubmit = (value) => {
-    console.log(value)
-  }
+
   handleClear = () => {
     console.log('Clear!')
   }
@@ -28,8 +37,7 @@ class App extends React.Component {
 
         <h2>Manage your tasks</h2>
         <TodoList 
-          tasks = {this.state.task}
-          completed = {this.state.completed} 
+          tasks = {this.state.tasks}
           handleSubmit = {this.handleSubmit}
           handleClear = {this.handleClear} 
         />

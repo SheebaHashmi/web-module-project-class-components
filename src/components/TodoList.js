@@ -9,7 +9,9 @@ class TodoList extends React.Component {
     render(){
         return(
             <div>
-                <Todo tasks = {this.props.tasks}/>
+                {
+                    this.props.tasks.map(task => <Todo task = {task} key={task.id}/>)
+                }
                 <TodoForm 
                     handleSubmit = {this.props.handleSubmit}
                     handleClear = {this.props.handleClear} 
