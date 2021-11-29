@@ -10,13 +10,37 @@ html, body, #root {
 label {
     display:block;
 }
+.container{
+    margin: 2% 30%;
+}
 .task{
-    color: rgb(43, 144, 226)
+    background: linear-gradient(to bottom right,rgb(245, 135, 193),pink);
+    color:white;
+    text-transform: capitalize;
+    border-radius: 5px;
+    padding:2% 3%;
+    margin-right:25%;
+    margin-bottom:1%;
 }
 .task-completed{
-    color:red;
+    background: linear-gradient(to bottom right,rgb(102, 152, 245),rgb(189, 211, 252));
+    color:white;
     text-decoration: line-through;
+    text-transform: capitalize;
+    border-radius: 5px;
+    padding:2% 3%;
+    margin-right:25%;
+    margin-bottom:1%;
 }
 p{
     cursor: pointer;
+}
+
+.add-btn{
+    background-color: rgb(43, 144, 226);
+    color:white;
+}
+.remove-btn{
+    background-color: rgb(250, 94, 115);
+    color:white;
 }

@@ -23,10 +23,10 @@ class TodoForm extends React.Component {
     }
     render(){
         return(
-            <div>
-                <input type="text" placeholder="...todo" onChange = {this.handleChange}/>
-                <button onClick = {this.handleClickSubmit}>Add Task</button>
-                <button onClick = {this.props.handleClear}>Clear List</button>
+            <div className="form">
+                <input type="text" placeholder="...todo" onChange = {this.handleChange} value={this.state.input}/>
+                <button className = "add-btn" onClick = {this.handleClickSubmit}>Add Task</button>
+                <button className="remove-btn" onClick = {this.props.handleClear}>Clear List</button>
             </div>
         )
     }
