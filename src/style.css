@@ -10,3 +10,13 @@ html, body, #root {
 label {
     display:block;
 }
+.task{
+    color: rgb(43, 144, 226)
+}
+.task-completed{
+    color:red;
+    text-decoration: line-through;
+}
+p{
+    cursor: pointer;
+}
