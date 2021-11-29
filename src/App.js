@@ -17,7 +17,7 @@ class App extends React.Component {
   handleSubmit = (item) => {
     const newTask = {
       task:item,
-      id:Date.now,
+      id:Date.now(),
       completed:false
     }
 
@@ -25,11 +25,25 @@ class App extends React.Component {
       ...this.state,
       tasks: [...this.state.tasks,newTask]
     })
-    console.log(this.state.tasks)
   }
 
   handleClear = () => {
-    console.log('Clear!')
+    this.setState({
+      ...this.state,
+      tasks: this.state.tasks.filter(item => !item.completed)
+    })
+  }
+  handleToggleItem = (item) => {
+    this.setState({
+      ...this.state,
+      tasks:this.state.tasks.map(task => {
+        if(task.id === item.id){
+          return{...task,completed: !task.completed}
+        }else{
+          return task
+        }
+      })
+    })
   }
   render() {
     return (
@@ -40,6 +54,7 @@ class App extends React.Component {
           tasks = {this.state.tasks}
           handleSubmit = {this.handleSubmit}
           handleClear = {this.handleClear} 
+          handleToggleItem = {this.handleToggleItem}
         />
 
       </div>
